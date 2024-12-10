@@ -2,162 +2,71 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Meta tag untuk responsivitas -->
-    <title>pawshiesh</title>
-    <style>
-        /* Reset dan styling umum */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif; /* Menggunakan font modern */
-            background-color: #121212; /* Latar belakang hitam */
-            color: #ffffff; /* Teks putih */
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        h1 {
-            font-size: 48px;
-            color: #f39c12; /* Warna emas cerah */
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            opacity: 0;
-            animation: fadeIn 1.5s forwards;
-        }
-
-        /* Animasi fade in untuk judul */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        p {
-            font-size: 18px;
-            color: #b2b2b2; /* Warna abu-abu untuk teks */
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-            animation-delay: 1s;
-        }
-
-        /* Tombol klik */
-        #surpriseButton {
-            background-color: #f39c12; /* Warna emas cerah */
-            color: white;
-            border: none;
-            padding: 20px 40px;
-            font-size: 20px;
-            cursor: pointer;
-            border-radius: 30px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: background-color 0.3s ease;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-            animation-delay: 2s;
-        }
-
-        #surpriseButton:hover {
-            background-color: #e67e22;
-        }
-
-        /* Efek bunga */
-        .flower {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background-color: #f39c12;
-            border-radius: 50%;
-            opacity: 0;
-            animation: flower-animation 2s forwards;
-        }
-
-        @keyframes flower-animation {
-            0% {
-                transform: scale(0) translateY(0);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1) translateY(-300px); /* Gerak ke atas */
-                opacity: 0;
-            }
-        }
-
-        .hiddenText {
-            display: none;
-            font-size: 24px;
-            color: #f39c12;
-            margin-top: 40px;
-            font-weight: bold;
-            animation: fadeIn 3s forwards;
-            animation-delay: 2.5s;
-        }
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko sipa - Jualan pacar</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>nyobain buat code champ</h1>
-<p>coba klik yg dibawah</p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Toko sipa</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="#">Produk</a></li>
+                    <li><a href="#">profile</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<button id="surpriseButton">Klik Aku!</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Selamat datang di Toko sipa!</h2>
+            <p>Dapatkan produk yg baik dengan harga menarik. ada banyak pilihan menarik nih, pokonya jangan sampe ketinggalan zaman yaa</p>
+        </div>
+    </section>
 
-<!-- Pesan spesial -->
-<div class="hiddenText" id="surpriseMessage">
-    <p>Semoga kamu  sama aku selalu sehat💖</p>
-</div>
+    <!-- Produk Section -->
+    <section class="products">
+        <div class="container">
+            <h2>Pacar 1</h2>
+            <div class="product-list">
+                <!-- daviq -->
+                <div class="product-card">
+                    <img src="product1.jpg" alt="Produk 1">
+                    <h3>daviq</h3>
+                    <p>Harga: Rp. 100.000</p>
+                    <a href="#" class="buy-btn">Beli Sekarang</a>
+                </div>
+                <!-- dapiw -->
+                <div class="product-card">
+                    <img src="product2.jpg" alt="Produk 2">
+                    <h3>dapiw</h3>
+                    <p>Harga: Rp. 150.000</p>
+                    <a href="#" class="buy-btn">Beli Sekarang</a>
+                </div>
+                <!-- piw -->
+                <div class="product-card">
+                    <img src="product3.jpg" alt="Produk 3">
+                    <h3>piw</h3>
+                    <p>Harga: Rp. 200.000</p>
+                    <a href="#" class="buy-btn">ayok Beli Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<script>
-    document.getElementById('surpriseButton').addEventListener('click', function(event) {
-        // Menampilkan pesan spesial
-        const surpriseMessage = document.getElementById('surpriseMessage');
-        surpriseMessage.style.display = 'block';
-
-        // Menambahkan efek bunga di lokasi klik
-        const clickX = event.clientX;
-        const clickY = event.clientY;
-
-        // Buat elemen bunga baru
-        for (let i = 0; i < 5; i++) {
-            const flower = document.createElement('div');
-            flower.classList.add('flower');
-
-            // Tentukan posisi bunga berdasarkan klik
-            flower.style.left = `${clickX - 25}px`;  // Agar bunga muncul di tengah klik
-            flower.style.top = `${clickY - 25}px`;
-
-            // Tentukan delay acak dan ukuran bunga
-            flower.style.animationDelay = `${Math.random() * 0.5}s`; // Delay acak untuk efek lebih natural
-            flower.style.width = `${Math.random() * 40 + 30}px`; // Ukuran bunga acak
-            flower.style.height = flower.style.width;
-
-            // Tambahkan bunga ke body
-            document.body.appendChild(flower);
-
-            // Hapus bunga setelah animasi selesai
-            setTimeout(() => {
-                flower.remove();
-            }, 2000); // 2000ms adalah durasi animasi bunga
-        }
-    });
-</script>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 sipa. bisa cod say.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
